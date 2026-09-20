@@ -5,8 +5,11 @@
 ```shell
 #parted usb
 
-#install grub
+#install grub for uefi boot
 grub-install --target=x86_64-efi --efi-directory=$esp --boot-directory=$boot --removable
+
+#install grub for legency boot
+grub-install --target=i386-pc --force --boot-directory=$boot $device
 
 #cp isofile into $esp/iso
 
